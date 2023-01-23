@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="abc" placeholder="enter a value bro">
+
+    <script>
+        let input = document.getElementById("abc")
+        let counter = 0;
+        var enter;
+
+
+        // input.addEventListener("change", (e) => {
+        //     enter = e.target.value;
+        //     console.log(enter);
+        //     e.target.value = "";
+        //     document.write("<p>" + enter + "</p>");
+        // });
+
+        do {
+
+            let step = counter + enter;
+            counter = step;
+            // console.log(step);
+
+            // console.log(counter);   
+
+        }
+        while (counter <= 100);
+        document.write("<p>=" + counter + "</p>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+
+
+        let generate = Math.floor(Math.random() * 11);
+        console.log(generate);
+
+        let enter=prompt("enter the number between 0 & 10")
+        // enter = Number(enter);
+        let check = false;
+        let checkFun = (enter) => {
+          if(enter>generate){
+                alert("The number entered is High")
+            }else if(enter<generate) {
+                alert("low")
+                enter=prompt("enter the number between 0 & 10")
+            }else{
+                alert("only numbers are allowed")
+                enter=prompt("enter the number between 0 & 10")
+            }
+            
+        }
+    
+         if(enter==generate){
+                document.write("match");
+                 check=true;
+            }
+            else if(enter!=""){
+                checkFun(enter)
+            }
+            else if(enter==""){
+                alert("Please enter number")
+                checkFun()
+            }
+            
+/* while(enter=prompt("enter the number between 0 & 10")){
+            if (enter === null){
+                alert("please enter a number");
+            }else if(enter==generate){
+                document.write("match");
+                check=true;
+                break;
+            }else if(enter>generate){
+                alert("The number entered is High")
+            }else if(enter<generate) {
+                alert("low")
+            }else{
+                alert("only numbers are allowed")
+            }
+        } */
+    </script>
+
+</body>
+
+</html>

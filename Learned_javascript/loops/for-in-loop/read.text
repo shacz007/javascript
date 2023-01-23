@@ -1,0 +1,10 @@
+Looping over an object can be done in a few ways. 
+We can use the for in loop to
+loop over the object directly, 
+or we can convert the object to an array and loop over
+the array. We'll consider both in the following sections.
+
+
+for in loop
+&
+convert objects to array and then iterate or loop

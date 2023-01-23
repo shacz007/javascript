@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tickets</title>
+    <script>
+   /* let a = new Number;
+    a.name="sachin";
+    console.log(a.name) 
+    console.log(a);*/
+    let person =  prompt("please enter your age here:");
+    person=Number(person);
+    //console.log(typeof Number(person));
+      /*Number.number=10;
+      console.log(Number.number);*/
+         
+      if (person <0){
+        message = "invalid entry";
+        cost = null;
+      }
+
+else if(person>0 && person<=3){
+   message="free access ";
+   cost=0;
+}
+else if(person>3 && person <=16){
+    message="you are aged between 3 and 16,so ";
+    cost = 5 ;
+}
+else if(person>16 && person <=65){
+    message = "you are considered an adult,and  ";
+    cost = 10;
+}
+else{
+    message= "you are a senior citizen, and ";
+    cost= 7;
+}
+document.write("<p>"+message+"</p>");
+//document.write("<br>");
+document.write("your ticket cost is = "+cost);
+document.write(typeof person);
+
+    </script>
+</head>
+<body>
+<a href="#"><h1>buy tickets here</h1></a>
+</body>
+</html>
