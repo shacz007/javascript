@@ -12,3 +12,9 @@ console.log(a);
 console.log(a.every(checkString));
 
 // retturns true or false after checking if every eelment 
+let an=1
+console.log(typeof an);
+let arr = ["man"];
+console.log(arr[0]);
+let mapped_arr = arr.map((x) =>{ return typeof x == String  }); 
+console.log(mapped_arr);
