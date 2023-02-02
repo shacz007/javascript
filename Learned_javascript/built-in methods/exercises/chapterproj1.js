@@ -34,10 +34,9 @@ as an argument. Output this to the console. */
 
 
 // let word = "costly";
-let newString="sachin";
-console.log(newString);
-let c = newString.charAt(2);
-// console.log(c);
+let newString="Mitsubishi";
+console.log("InputString => " + newString);
+
 
 let sizeOFstring = newString.length;
 // console.log(sizeOFstring);
@@ -47,18 +46,20 @@ while (arr.length < sizeOFstring) {
     Random = Math.floor(Math.random() * sizeOFstring);
     // console.log(Random);
     let indexValue = arr.indexOf(Random);
-    console.log(Random,indexValue);
+
+    // console.log(Random,indexValue);
+    
     if (indexValue == -1) {
         arr.push(Random);
     }
 }
-    console.log(arr);
+    // console.log(arr);
 
 /*     at this point the program is generating the
  random numbers limited to the string limit without repition */
 
  let splitstring = newString.split("");
- console.log(splitstring);
+//  console.log(splitstring);
 
 //  now the string is split and an empty array is generated with random numbers
 // further match the split string with randomly generated array and join the array to clg scrambled string
@@ -66,12 +67,32 @@ while (arr.length < sizeOFstring) {
 
 let arr1=[]
 for(element of arr){
-     paired = splitstring[element];
+    /*  paired = splitstring[element];
      console.log(paired);
-     arr1.push(paired);
+     arr1.push(paired); */
+     let c = newString.charAt(arr[element]);
+
+    //  console.log(c);
+     
+    splitstring.shift();
+     splitstring.push(c);
+     
     }
-console.log(arr1);
+    // console.log(splitstring);
+
+    scrambled_string = splitstring.join("");
+    console.log("scrambled string => " + scrambled_string);
+
+
+
+
+
+
+
+
+
+    /* console.log(arr1);
 newString = arr1.join("");
 console.log(newString);
-    
+     */
 
