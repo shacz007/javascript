@@ -33,8 +33,45 @@ as an argument. Output this to the console. */
 
 
 
-let word = "costly";
+// let word = "costly";
+let newString="sachin";
+console.log(newString);
+let c = newString.charAt(2);
+// console.log(c);
 
-function func(word){
+let sizeOFstring = newString.length;
+// console.log(sizeOFstring);
 
+let arr = []
+while (arr.length < sizeOFstring) {
+    Random = Math.floor(Math.random() * sizeOFstring);
+    // console.log(Random);
+    let indexValue = arr.indexOf(Random);
+    console.log(Random,indexValue);
+    if (indexValue == -1) {
+        arr.push(Random);
+    }
 }
+    console.log(arr);
+
+/*     at this point the program is generating the
+ random numbers limited to the string limit without repition */
+
+ let splitstring = newString.split("");
+ console.log(splitstring);
+
+//  now the string is split and an empty array is generated with random numbers
+// further match the split string with randomly generated array and join the array to clg scrambled string
+// [arr] should  === [splitstring]
+
+let arr1=[]
+for(element of arr){
+     paired = splitstring[element];
+     console.log(paired);
+     arr1.push(paired);
+    }
+console.log(arr1);
+newString = arr1.join("");
+console.log(newString);
+    
+
