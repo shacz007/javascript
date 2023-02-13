@@ -1,5 +1,4 @@
-// generated random number is assignedto the indexValue
-// compare with "-1" which is returned only when the element is not present in the array
+//generates random number without repetition***************************
 let n = 10;
 let arr = []
 while (arr.length < n) {
@@ -12,6 +11,8 @@ while (arr.length < n) {
     }
 }
 console.log(arr);
+
+//**********************************************************************************************************************************************
 
 
 
