@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .main{
+            color : rgb(46, 178, 66);
+        }
+        .fourth{
+            color:magenta
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol class="man">
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+       <h1 id="hat">manager</h1> 
+    </div>
+    <script>
+//1. Select the section with an id of container without using querySelector.
+        const a = document.getElementById("container");
+        console.log(a);
+        
+// 2.Select the section with an id of container using querySelector.
+        let b = document.querySelector("#container")
+
+// 3.Select all of the list items with a class of "second".
+        let c = document.getElementsByClassName("second");
+        console.log(c);
+
+// 4.Select a list item with a class of third, but only the list item inside of the ol tag.
+        let d = document.querySelector("ol > li.third");
+        d.style.color = "red";
+        console.log(d);
+
+//5. Give the section with an id of container the text "Hello!"
+        // let e = document.getElementById("container").innerText = "Hello!";
+        // console.log(e);
+
+//6.Add the class main to the div with a class of footer.
+        let f = document.querySelector("div.footer");
+        f.classList.add("main"); //valid
+        // f.className += " main"; //valid
+        console.log(f);
+
+// 7.Remove the class main on the div with a class of footer.
+        let g = document.querySelector("div.footer");
+        g.classList.remove("main")
+        console.log(g);
+
+//8. Create a new li element.
+        let h = document.createElement("li");
+        h = document.getElementsByTagName("li").innerText = "four";
+        console.log(h);
+        let i = document.querySelector("ul");
+        let j = document.createElement("li");
+
+// 9.Give the li the text "four".
+        j.appendChild(document.createTextNode("four"));
+        j.setAttribute("class", "fourth");
+
+// 10.Append the li to the ul element.
+        i.appendChild(j);
+        console.log(j);
+
+// 11.Loop over all of the lis inside the ol tag and give them a background color of "green".
+        let k = document.querySelector("ol");
+        k.style.backgroundColor="green";
+
+// 12.Remove the div with a class of footer.
+        let m = document.querySelector("div.footer");
+        m.classList.remove("footer");
+
+
+
+    </script>
+</body>
+</html>
