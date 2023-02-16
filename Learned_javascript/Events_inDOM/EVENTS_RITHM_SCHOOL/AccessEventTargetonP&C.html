@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            let ul = document.querySelector("ul");
+            ul.addEventListener("click", function(event){
+                alert("yoou clicked on "+ event.target.innerText);
+            });
+
+            let listItems = document.getElementsByTagName("li");
+            for(let i=0; i<listItems.length; i++){
+                listItems[i].addEventListener("click", function(event){
+                alert("you clicked on " + event.target.innerText)
+            }) ;    
+        }
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>milk</li>
+        <li>coffe</li>
+        <li>tea</li>
+        <li>gangi</li>
+        <li>butter miilk</li>
+    </ul>
+</body>
+</html>

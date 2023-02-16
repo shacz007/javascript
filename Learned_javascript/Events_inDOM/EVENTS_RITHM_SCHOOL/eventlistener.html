@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="first_button" onclick="firstclick()">click meeee</button>
+    <button class="second_button">click me second</button>
+    <button class="third_button">click me third</button>
+    <script>
+
+// Option 1: - directly in HTML. Note that in your HTML,
+// the first button makes reference to a function called firstClick
+// in the onclick attribute
+        function firstclick(){
+            alert("hello you clicked 1st button using function name in html document");
+        }
+
+// Option 2 - attach the function to the element(****************2nd best option************)
+        let secondButton = document.querySelector(".second_button");
+        secondButton.onclick = function(){
+                alert("you clicked 2nd button with different assign method");
+        }
+        
+
+// Option 3 - use addEventListener(*********************1st best option************)
+        let thirdButton = document.querySelector(".third_button");
+        thirdButton.addEventListener("click", function(){
+                 alert("you clicked 3rd button using addeventlistener method");
+})
+
+    </script>
+</body>
+</html>

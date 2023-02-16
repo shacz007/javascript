@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add event listener</title>
+</head>
+<body>
+    <button class="first_button">click me first</button>
+    <button class="second_button">click me second</button>
+    <button class="third_button">click me third</button>
+
+    <script>
+        let alertData = ()=>{
+            alert("clicked");
+        }
+
+        let buttons = document.getElementsByTagName("button");
+
+        for(let i = 0; i<buttons.length; i++)
+        {
+            buttons[i].addEventListener("click", alertData);
+        }
+        
+        // since we have named our function, we know which one to remove
+        for(let i = 0 ;i< buttons.length;i++)
+        {
+            buttons[i].removeEventListener("click", alertData);
+        }
+    </script>
+</body>
+</html>

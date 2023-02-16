@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add event listener</title>
+</head>
+<body>
+    <button class="first_button">click me first</button>
+    <button class="second_button">click me second</button>
+    <button class="third_button">click me third</button>
+
+    <script>
+
+         let buttons = document.getElementsByTagName("button");
+        // console.log(buttons);
+       /* buttons.addEventListener("click",()=>{
+            alert("you  clicked");
+        }) */
+
+        //********Error : addeventlistner.html:17 Uncaught TypeError: buttons.addEventListener is not a function********
+      
+            for ( let i = 0; i<buttons.length; i++){
+            buttons[i].addEventListener("click", ()=>{
+                alert("you clicked button!");
+            });
+        }
+//*******following below remove code wont work becoz its an annonymous function*******
+        for (let j = 0;j < buttons.length; j++){
+            buttons[j].removeEventListener("click", ()=>{
+                alert("you clicked button!");
+            })
+        }
+    </script>
+</body>
+</html>
