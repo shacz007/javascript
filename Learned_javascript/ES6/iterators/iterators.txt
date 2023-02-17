@@ -1,0 +1,6 @@
+We've seen how to iterate through arrays using for loops. 
+But JavaScript also has a number of built-in methods on arrays, called iterators, 
+which can often be used in place of for loops. Choosing the right iterator can 
+allow you to write code that's both shorter and easier to read. Before we get into
+trade offs between loops and iterators too much, though, let's take a look at the
+iterators available to you in JavaScript.
