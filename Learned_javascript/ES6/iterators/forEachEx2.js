@@ -11,7 +11,7 @@ let a = [{name: 'Elie'},{name: 'Tim'},{name: 'Elie'}];
 var c=true;
 
 a.forEach(function(element,index, ){
-    a[index].b=c;
+    a[index].isInstructor=c;
 
 });
 console.log(a);
