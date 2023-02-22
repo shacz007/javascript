@@ -63,3 +63,11 @@ body{
 #clear{
     color: red;
 }
+
+.foot{
+    font-size: 55px;
+    padding: 0 2px 0 12px;
+    background-color: rgb(179, 173, 166);
+    border: 3px solid black;
+    border-radius: 10px;
+}
