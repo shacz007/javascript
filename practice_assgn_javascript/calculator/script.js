@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 let button = document.querySelectorAll('button');
 let screen = document.getElementById("toscreen");
+
 // console.log(button);
 // console.log(screen);
 
@@ -23,7 +24,7 @@ for(item of button){
             screen.innerText = screen.innerText.slice(0,screen.innerText.length-1)
         }
         else{
-            screen.innerText = screen.innerText+ buttonText
+            screen.innerText = screen.innerText + buttonText
         }
     })
 }
