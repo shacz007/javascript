@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(buttonText);
 
             if (buttonText === "=") {
-                let x = screen.innerText;
+                let x = screen.innerText; 
                 let y = eval(x);
                 console.log(x);
                 console.log(y);
-                screen.innerText = y;
+                screen.innerText = "="+y;
             }
             else if (buttonText === "AC") {
                 screen.innerText = "";
