@@ -1,3 +1,4 @@
+/* //need more and more styles */
 *{
     margin: 0;
     padding: 0;
@@ -36,6 +37,7 @@ body{
 
 #toscreen{
     font-size: clamp(1rem,4vh,3rem);
+    /* will prevent the text from overflow of screen */
     overflow: hidden;
 }
 
