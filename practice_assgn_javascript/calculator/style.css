@@ -35,7 +35,8 @@ body{
 }
 
 #toscreen{
-    font-size: xxx-large;
+    font-size: clamp(1rem,4vh,3rem);
+    overflow: hidden;
 }
 
 .buttons{
