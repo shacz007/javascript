@@ -17,6 +17,7 @@ else if(strokes == par  ){
 else if(strokes == par +1){
   return "Bogey"
 }
+// switch case can also be used
 else if(strokes == par +2){
     return "Double Bogey"
 }
