@@ -6,11 +6,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(screen);
     
     
+    const audio = new Audio("https://assets.mixkit.co/active_storage/sfx/2568/2568.wav");
 
     for (item of button) {
-        item.addEventListener("click", (e) => {
+        item.addEventListener("click",(e) => {
             buttonText = e.target.innerText;
+            audio.play();
             console.log(buttonText);
+// const buttons = document.querySelectorAll("button");
+
+// buttons.forEach(button => {
+//   button.addEventListener("click", () => {
+//     audio.play();
+//   });
+// });
+        
+    
             if(buttonText==="x"){
                 buttonText="*"}
 
