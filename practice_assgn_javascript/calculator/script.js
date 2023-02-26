@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //   button.addEventListener("click", () => {
 //     audio.play();
 //   });
-// });
-        
+// });  
     
             if(buttonText==="x"){
                 buttonText="*"}
