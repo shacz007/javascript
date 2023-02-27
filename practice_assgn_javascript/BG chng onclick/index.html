@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let arrofColr = ["blue", "green", "yellow", "orange", "black", "indigo", "teal", "pink", "skyblue", "violet"];
+
+
+        window.onload = () => {
+            let display = document.querySelector("div");
+            let click = document.getElementById("bg");
+            let show = document.getElementById("name");
+
+            click.addEventListener("click", () => {
+
+                var random = arrofColr[Math.floor(Math.random() * arrofColr.length)];
+                console.log(random);
+                show.innerHTML = random
+
+                display.style.background = random;
+
+            })
+
+
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #name {
+            display: block;
+        }
+
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #bg {
+            width: 80vw;
+            height: 80vh;
+            background: yellow;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body style="text-align: right; font-size: xx-large;">
+    <h1 id="name" style="color: rgb(0, 0, 0);"></h1>
+    <div id="bg">
+
+    </div>
+    <h4 style="color: rgb(81, 78, 78); text-align: left;">click anywhere</h4>
+</body>
+
+</html>
+
+<!--############################## CODE IS MESSY############################## -->
