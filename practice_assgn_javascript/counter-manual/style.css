@@ -43,6 +43,9 @@ body{
 #plus{
     background: lightgreen;
 }
+h1{
+    color: whitesmoke;
+}
 .screen{
     background-color: rgb(8, 6, 6);
     color: rgb(255, 255, 255);
