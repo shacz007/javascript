@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
+    const music = new Audio("https://assets.mixkit.co/active_storage/sfx/275/275.wav");
+    const music1 = new Audio("https://assets.mixkit.co/active_storage/sfx/1114/1114.wav")
     //take control of screen
-    let display = document.getElementById("display")
+    let display = document.getElementById("display");
 
     // take control of btns
     let minus = document.getElementById("minus");
@@ -10,18 +12,21 @@ document.addEventListener("DOMContentLoaded",()=>{
     
     //minus count functionality when minus btn clicked
     minus.addEventListener("click",()=>{
-    let z = eval(Number(display.innerHTML) - 1)
+    music.play();
+    let z = eval(Number(display.innerHTML) - 1);
     display.innerHTML = z;
-    })
+    });
 
     // add 1 when the plus btn is clicked
     plus.addEventListener("click",()=>{
-        let z = eval(Number(display.innerHTML) + 1)
-        display.innerHTML = z
-    })
+        music.play();
+        let z = eval(Number(display.innerHTML) + 1);
+        display.innerHTML = z;
+    });
 
     // set to zero when the clear button is clicked
     clear.addEventListener("click",()=>{
-        display.innerText = "0"
-    })
+        music1.play();
+        display.innerText = "0";
+    });
 })
