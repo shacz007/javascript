@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show a fortune </title>
+</head>
+<body>
+    <p>
+        <button>Get Your Fortune</button>
+    </p>
+    
+    <div id="fortune"></div>
+
+    <script>
+        // get DOM elements
+        let button = document.querySelector("button");
+        let fortune = document.querySelector("#fortune")
+
+        button.addEventListener("click", getFortune);
+
+        function getFortune(){
+            fortune.textContent = "you will be happy today";
+        }
+  </script>
+</body>
+</html>
