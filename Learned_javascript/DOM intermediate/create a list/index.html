@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Randomize</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1>Randomize</h1>
+
+		<form id="add-item">
+			<label for="item">Add an item to the list...</label>
+			<input type="text" id="item" name="item">
+			<button>Add Item</button>
+		</form>
+
+		<ul id="items">
+            
+        </ul>
+
+        <p>
+            <button id="pick">Pick an Item</button>
+        </p>
+        
+        <div id="chosen"></div>
+
+
+		<script>
+			// Codes goes here...
+        // get the DOM elements
+        let form = document.querySelector("#add-item");
+        let list = document.querySelector("#items");
+        let pick = document.querySelector("#pick");
+        let chosen = document.querySelector("#chosen");
+
+
+        function addItem(event){
+            // stop the form from reloading page on submission
+            event.preventDefault();
+
+            // get the item
+            let formData = new FormData(form);
+            let item = formData.get('item');
+
+            // if there is no item,dont do anything on submit
+            if(!item) return;
+
+            // otherwise additem to the list 
+            addToList(item);
+
+            // clear the form
+
+            form.reset();
+
+        }
+        function showStatus(item) {
+
+                let notification = document.createElement("div")
+                // add text after it is in UI
+                setTimeout(function () {
+                    notification.textContent = `${item} was added to the list.`
+                }, 1)
+
+                // remove it after 3 seconds
+                setTimeout(function () {
+                    notification.remove();
+
+                }, 3000)
+            }
+            // load saved list from local storage
+            function loadList () {
+	let saved = localStorage.getItem('randomize');
+	if (!saved) return;
+	list.innerHTML = saved;
+}
+        function addToList(item){
+            // create list item
+            let li = document.createElement("li");
+            li.textContent = item;
+
+            list.append(li);
+
+            // show status message
+            showStatus(item);
+
+            // save list to local storage
+            // Save list to localStorage
+	localStorage.setItem('randomize', list.innerHTML);
+        }
+
+        
+
+        function pickItem(){
+            // get the items
+            let items = Array.from(document.querySelectorAll("#items li"));
+
+            // shuffle the items
+            shuffle(items);
+
+            // display the first item
+            chosen.textContent = items[0].textContent;
+
+        }
+        function shuffle (array) {
+
+let currentIndex = array.length;
+let temporaryValue, randomIndex;
+
+// While there remain elements to shuffle...
+while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+}
+
+return array;
+
+}
+
+loadList();
+
+        form.addEventListener("submit", addItem);
+        pick.addEventListener("click", pickItem);
+
+		</script>
+	</body>
+</html>
