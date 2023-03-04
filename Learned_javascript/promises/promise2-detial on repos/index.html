@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GitHub API - Repos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            max-width: 40em;
+            width: 88%;
+        }
+
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+
+        @media (min-width: 40em) {
+            .gh-grid {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 1em;
+                grid-row-gap: 1em;
+            }
+
+            .gh-avatar {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            .gh-details {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>GitHub API - Repos</h1>
+
+    <div id="github">
+        <p><a href="https://github.com/shacz007">View my GitHub Profile</a></p>
+    </div>
+
+
+    <script>
+        // Get the DOM nodes
+        let github = document.querySelector('#github');
+
+        /**
+         * Render the UI
+         * @param  {Object} data The GitHub data
+         */
+         function render (data) {
+
+// Get variables from the data
+let [profile, repos] = data;
+
+// Sort the repos by stars
+repos.sort(function (repo1, repo2) {
+		if (repo1.stargazers_count > repo2.stargazers_count) {
+			return -1;
+		}
+		return 1;
+	});
+
+    // Only keep 5 most starred repositories
+	repos = repos.slice(0, 5);
+
+// Render the UI
+github.innerHTML =
+    `<div class="gh-grid">
+        <div class="gh-avatar">
+            <p><img alt="" src="${profile.avatar_url}"></p>
+        </div>
+        <div class="gh-details">
+            <p>
+                <strong>${profile.name}</strong><br>
+                ${profile.location}<br>
+                <em><a href="${profile.url}">${profile.public_repos} public repos</a></em>
+            </p>
+            <ul>
+                ${repos.map(function (repo) {
+                    return `<li><a href="${repo.html_url}">${repo.name}</a> - ${repo.stargazers_count} Stars</li>`;
+                }).join('')}
+            </ul>
+        </div>
+    </div>`;
+
+}
+
+        
+        // Call the GitHub API
+        Promise.all([
+            fetch('https://api.github.com/users/shacz007'),
+            fetch('https://api.github.com/users/shacz007/repos?sort=pushed')
+        ]).then(function (responses) {
+            return Promise.all(responses.map(function (response) {
+                return response.json();
+            }));
+        }).then(function (data) {
+            console.log(data);
+            render(data);
+        }).catch(function (error) {
+            console.warn(error);
+        });
+    </script>
+</body>
+
+</html>
